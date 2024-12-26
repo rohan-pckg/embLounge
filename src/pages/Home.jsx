@@ -34,33 +34,45 @@ const HomePage = () => {
     transition: { duration: 0.6 },
   };
 
+  const staggerContainer = {
+    initial: {},
+    whileInView: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-teal-950 via-teal-900 to-teal-950">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center text-white text-center px-4 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[url('/src/assets/hero_bg.png')] bg-cover bg-center opacity-20"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-teal-950/50 to-teal-950"></div>
+      <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-teal-950/80 to-teal-950"></div>
+          <img
+            src="/src/hero_bg.png"
+            alt="Background"
+            className="w-full h-full object-cover scale-105"
+          />
         </div>
-
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative max-w-4xl mx-auto space-y-8"
+          className="relative z-10 max-w-6xl mx-auto text-center"
+          variants={fadeInUp}
+          initial="initial"
+          whileInView="whileInView"
         >
-          <h1 className="text-6xl md:text-7xl text-emerald-200 font-light tracking-tight mb-4 leading-tight">
+          <h1 className="text-7xl md:text-8xl text-emerald-200 font-light tracking-tight mb-8">
             Welcome to Embassy Lounge
           </h1>
-          <p className="text-2xl md:text-3xl mb-8 text-emerald-200/90 font-light">
+          <p className="text-white text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light mb-12">
             Where Entertainment Meets Elegance
           </p>
           <motion.button
+            className="px-8 py-3 bg-emerald-200 text-teal-950 rounded-full text-lg font-medium hover:bg-emerald-300 transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-emerald-200 text-teal-950 px-8 py-4 rounded-lg hover:bg-emerald-300 transition-colors shadow-lg"
           >
             Book a Space
           </motion.button>
@@ -70,25 +82,35 @@ const HomePage = () => {
       {/* Features Section */}
       <section className="py-32 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl text-center text-emerald-200 font-light tracking-tight mb-16">
-            Explore Embassy Lounge Uganda
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <motion.h2
+            className="text-5xl md:text-6xl text-center text-emerald-200 font-light tracking-tight mb-20"
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="whileInView"
+          >
+            Explore Embassy Lounge
+          </motion.h2>
+          <motion.div
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
             {[
               {
-                icon: <User className="w-8" />,
+                icon: <User className="w-8 h-8" />,
                 title: "Who We Are",
                 description:
                   "Embassy Lounge Uganda is a leading hospitality brand renowned for its perfect blend of entertainment, comfort, and warm hospitality.",
               },
               {
-                icon: <MapPin className="w-8" />,
+                icon: <MapPin className="w-8 h-8" />,
                 title: "Our Locations",
                 description:
                   "Our vibrant bars and cozy guest houses in Mbale, Iganga, Busia, and Jinja offer an ideal retreat for both leisure travelers and business guests.",
               },
               {
-                icon: <Phone className="w-8" />,
+                icon: <Phone className="w-8 h-8" />,
                 title: "Why Choose Us",
                 description:
                   "At Embassy Lounge Uganda, we pride ourselves on delivering exceptional service and unforgettable experiences that exceed expectations.",
@@ -97,35 +119,45 @@ const HomePage = () => {
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                initial="initial"
-                whileInView="whileInView"
-                viewport={{ once: true }}
-                className="hover:-translate-y-2 transition-transform duration-300"
+                className="bg-emerald-200/10 backdrop-blur-sm p-8 rounded-xl border border-emerald-200/20"
               >
-                <div className="bg-gradient-to-br from-emerald-100 to-emerald-200 p-8 rounded-xl shadow-xl h-full">
-                  <div className="text-teal-950 mb-6">{feature.icon}</div>
-                  <h3 className="text-2xl font-medium text-teal-950 mb-4 tracking-tight">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-700">{feature.description}</p>
-                </div>
+                <div className="text-emerald-200 mb-6">{feature.icon}</div>
+                <h3 className="text-2xl font-light text-emerald-200 mb-4">
+                  {feature.title}
+                </h3>
+                <p className="text-white/70">{feature.description}</p>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Branches Section */}
       <section className="py-32 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl text-center text-emerald-200 font-light tracking-tight mb-6">
+          <motion.h2
+            className="text-5xl md:text-6xl text-center text-emerald-200 font-light tracking-tight mb-8"
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="whileInView"
+          >
             Discover Our Branches
-          </h2>
-          <p className="text-center text-white text-xl mb-20">
+          </motion.h2>
+          <motion.p
+            className="text-center text-white/70 text-xl mb-20"
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="whileInView"
+          >
             Unwind, Dine, and Stay—Just a Click Away! ⭐✨
-          </p>
+          </motion.p>
 
-          <div className="space-y-24">
+          <motion.div
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            className="space-y-16"
+          >
             {[
               {
                 name: "Embassy Lounge Mbale",
@@ -155,69 +187,79 @@ const HomePage = () => {
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                initial="initial"
-                whileInView="whileInView"
-                viewport={{ once: true }}
-                className="bg-gradient-to-r from-teal-900 to-teal-800 rounded-2xl overflow-hidden shadow-2xl"
+                className="group relative overflow-hidden rounded-2xl bg-emerald-200/10 backdrop-blur-sm border border-emerald-200/20"
               >
                 <div
-                  className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${index % 2 === 1 ? "md:flex-row-reverse" : ""}`}
+                  className={`grid grid-cols-1 md:grid-cols-2 ${index % 2 === 1 ? "md:flex-row-reverse" : ""}`}
                 >
-                  <div className="relative overflow-hidden">
+                  <div className="relative h-[400px] overflow-hidden">
                     <img
                       src={branch.image}
                       alt={branch.name}
-                      className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-r from-teal-950/80 to-transparent"></div>
                   </div>
                   <div className="p-12 flex flex-col justify-center">
-                    <h3 className="text-2xl font-medium text-emerald-200 tracking-tight mb-6">
+                    <h3 className="text-3xl font-light text-emerald-200 mb-6">
                       {branch.name}
                     </h3>
-                    <p className="text-white text-lg mb-8">
+                    <p className="text-white/70 leading-relaxed mb-8">
                       {branch.description}
                     </p>
-                    <button className="flex items-center gap-3 bg-emerald-200 text-teal-950 px-6 py-3 rounded-lg hover:bg-emerald-300 transition-all duration-300 w-fit group">
+                    <motion.button
+                      className="flex items-center gap-3 bg-emerald-200 text-teal-950 px-6 py-3 rounded-full text-sm font-medium hover:bg-emerald-300 transition-colors w-fit"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
                       EXPLORE MORE
-                      <ArrowRight className="w-5 h-5" />
-                    </button>
+                      <ArrowRight className="w-4 h-4" />
+                    </motion.button>
                   </div>
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-32 px-4 bg-gradient-to-b from-teal-900 to-teal-950">
+      <section className="py-32 px-4 bg-gradient-to-b from-transparent to-teal-950/50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl text-center text-emerald-200 font-light tracking-tight mb-20">
+          <motion.h2
+            className="text-5xl md:text-6xl text-center text-emerald-200 font-light tracking-tight mb-20"
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="whileInView"
+          >
             What Our Guests Say
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          </motion.h2>
+          <motion.div
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          >
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                initial="initial"
-                whileInView="whileInView"
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-emerald-100 to-emerald-200 p-8 rounded-xl shadow-lg hover:-translate-y-2 transition-transform duration-300"
+                className="bg-emerald-200/10 backdrop-blur-sm p-8 rounded-xl border border-emerald-200/20"
               >
                 <div className="flex mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-5 h-5 text-yellow-500 fill-yellow-500"
-                    />
+                    <Star key={i} className="w-5 h-5 text-emerald-200" />
                   ))}
                 </div>
-                <p className="text-gray-700 mb-6 text-lg">{testimonial.text}</p>
-                <p className="text-teal-950 font-bold">{testimonial.author}</p>
+                <p className="text-white/70 mb-6 leading-relaxed">
+                  {testimonial.text}
+                </p>
+                <p className="text-emerald-200 font-medium">
+                  {testimonial.author}
+                </p>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 

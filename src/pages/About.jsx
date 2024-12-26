@@ -9,7 +9,7 @@ const timeline = [
     title: "Embassy Lounge Mbale",
     description:
       "Embassy Lounge Uganda's journey began with the launch of its flagship outlet. Embassy Lounge Mbale in 2016. This pioneering establishment set the stage for the growth and vision that would come to define our brand.",
-    image: "/src/assets/1-home.png", // Replace with actual image path
+    image: "/src/assets/1-home.png",
   },
   {
     year: "2018",
@@ -81,11 +81,13 @@ const About = () => {
     transition: { duration: 0.6 },
   };
 
-  const fadeIn = {
-    initial: { opacity: 0 },
-    whileInView: { opacity: 1 },
-    viewport: { once: true },
-    transition: { duration: 0.8 },
+  const staggerContainer = {
+    initial: {},
+    whileInView: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   return (
@@ -93,151 +95,140 @@ const About = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4">
-        <motion.div
-          className="absolute inset-0 opacity-20"
-          variants={fadeIn}
-          initial="initial"
-          animate="whileInView"
-        >
+      <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-teal-950/80 to-teal-950"></div>
           <img
-            src="/api/placeholder/1920/1080"
+            src="/src/assets/branch-hero.png"
             alt="Background"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover scale-105"
           />
-        </motion.div>
-        <div className="max-w-6xl mx-auto relative">
-          <motion.div
-            className="text-center"
-            variants={fadeInUp}
-            initial="initial"
-            animate="whileInView"
-          >
-            <h1 className="text-6xl md:text-7xl text-emerald-200 font-light tracking-tight mb-8">
-              Our Story
-            </h1>
-            <p className="text-white text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light">
-              Embassy Lounge Uganda: Where Every Milestone is a Step Towards
-              Exceptional Hospitality and Unforgettable Experiences.
-            </p>
-          </motion.div>
         </div>
+        <motion.div
+          className="relative z-10 max-w-6xl mx-auto text-center"
+          variants={fadeInUp}
+          initial="initial"
+          whileInView="whileInView"
+        >
+          <h1 className="text-7xl md:text-8xl text-emerald-200 font-light tracking-tight mb-8">
+            Our Story
+          </h1>
+          <p className="text-white text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light">
+            Embassy Lounge Uganda: Where Every Milestone is a Step Towards
+            Exceptional Hospitality
+          </p>
+        </motion.div>
       </section>
 
       {/* Timeline Section */}
-      <section className="py-20 px-4">
+      <section className="py-32 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="relative">
-            <div className="absolute left-4 md:left-1/2 h-full w-0.5 bg-emerald-200/30"></div>
+          <motion.h2
+            className="text-5xl md:text-6xl text-center text-emerald-200 font-light tracking-tight mb-20"
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="whileInView"
+          >
+            Our Journey
+          </motion.h2>
+          <motion.div
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            className="space-y-16"
+          >
             {timeline.map((item, index) => (
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                initial="initial"
-                whileInView="whileInView"
-                viewport={{ once: true }}
-                className={`relative flex flex-col md:flex-row gap-8 mb-16 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}
+                className="group relative overflow-hidden rounded-2xl bg-emerald-200/10 backdrop-blur-sm border border-emerald-200/20"
               >
-                <div className="flex-1 flex flex-col items-start">
-                  <div className="bg-emerald-200 text-teal-950 px-6 py-2 rounded-full mb-4 font-medium tracking-wide shadow-lg">
-                    {item.year}
+                <div className="grid md:grid-cols-2 items-center">
+                  <div className="relative h-[400px] overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-teal-950/80 to-transparent"></div>
                   </div>
-                  <div className="bg-gradient-to-br from-emerald-100 to-emerald-200 p-6 rounded-xl w-full shadow-xl hover:shadow-2xl transition-all duration-300">
-                    <div className="mb-4 overflow-hidden rounded-lg">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-                      />
+                  <div className="p-12">
+                    <div className="inline-block bg-emerald-200 text-teal-950 px-4 py-1 rounded-full text-sm font-medium mb-6">
+                      {item.year}
                     </div>
-                    <h3 className="text-2xl font-medium text-teal-950 mb-4 tracking-tight">
+                    <h3 className="text-3xl font-light text-emerald-200 mb-4">
                       {item.title}
                     </h3>
-                    <p className="text-gray-700 leading-relaxed">
+                    <p className="text-white/70 leading-relaxed">
                       {item.description}
                     </p>
                   </div>
                 </div>
-                <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-emerald-200 rounded-full transform -translate-x-2 mt-3 shadow-lg"></div>
-                <div className="flex-1"></div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Core Values Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-teal-900/50 to-teal-950/50">
+      <section className="py-32 px-4 bg-gradient-to-b from-transparent to-teal-950/50">
         <div className="max-w-6xl mx-auto">
           <motion.h2
-            className="text-4xl md:text-5xl text-center text-emerald-200 font-light tracking-tight mb-16"
+            className="text-5xl md:text-6xl text-center text-emerald-200 font-light tracking-tight mb-20"
             variants={fadeInUp}
             initial="initial"
             whileInView="whileInView"
-            viewport={{ once: true }}
           >
             Core Values
           </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
             {coreValues.map((value, index) => (
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                initial="initial"
-                whileInView="whileInView"
-                viewport={{ once: true }}
-                className="group bg-gradient-to-br from-emerald-100 to-emerald-200 p-8 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+                className="bg-emerald-200/10 backdrop-blur-sm p-8 rounded-xl border border-emerald-200/20"
               >
-                <value.icon className="w-12 h-12 text-teal-950 mb-6 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-2xl font-medium text-teal-950 mb-4 tracking-tight">
+                <value.icon className="w-12 h-12 text-emerald-200 mb-6" />
+                <h3 className="text-2xl font-light text-emerald-200 mb-4">
                   {value.title}
                 </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  {value.description}
-                </p>
+                <p className="text-white/70">{value.description}</p>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Purpose Section */}
-      <section className="py-20 px-4 relative overflow-hidden">
-        <motion.div
-          className="absolute inset-0 opacity-10"
-          variants={fadeIn}
-          initial="initial"
-          whileInView="whileInView"
-          viewport={{ once: true }}
-        >
-          <img
-            src="/api/placeholder/1920/1080"
-            alt="Background"
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
-        <div className="max-w-6xl mx-auto relative">
+      {/* Mission & Vision Section */}
+      <section className="py-32 px-4">
+        <div className="max-w-6xl mx-auto">
           <motion.h2
-            className="text-4xl md:text-5xl text-center text-emerald-200 font-light tracking-tight mb-16"
+            className="text-5xl md:text-6xl text-center text-emerald-200 font-light tracking-tight mb-20"
             variants={fadeInUp}
             initial="initial"
             whileInView="whileInView"
-            viewport={{ once: true }}
           >
-            Our Purpose, Our Promise
+            Our Purpose
           </motion.h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <motion.div
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            className="grid md:grid-cols-2 gap-8"
+          >
             <motion.div
               variants={fadeInUp}
-              initial="initial"
-              whileInView="whileInView"
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-emerald-100 to-emerald-200 p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300"
+              className="bg-emerald-200/10 backdrop-blur-sm p-8 rounded-xl border border-emerald-200/20"
             >
-              <h3 className="text-2xl font-medium text-teal-950 mb-4 tracking-tight">
+              <h3 className="text-3xl font-light text-emerald-200 mb-6">
                 Our Mission
               </h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-white/70 leading-relaxed">
                 To provide an exceptional hospitality experience created for
                 guests expectations through outstanding service and innovation,
                 fostering a culture of excellence while building lasting
@@ -246,45 +237,18 @@ const About = () => {
             </motion.div>
             <motion.div
               variants={fadeInUp}
-              initial="initial"
-              whileInView="whileInView"
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-emerald-100 to-emerald-200 p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300"
+              className="bg-emerald-200/10 backdrop-blur-sm p-8 rounded-xl border border-emerald-200/20"
             >
-              <h3 className="text-2xl font-medium text-teal-950 mb-4 tracking-tight">
+              <h3 className="text-3xl font-light text-emerald-200 mb-6">
                 Our Vision
               </h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-white/70 leading-relaxed">
                 To be the leading hospitality destination in East Africa, known
                 for creating memorable experiences and setting new standards in
                 service excellence and innovation.
               </p>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-teal-900/50 to-transparent">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h2
-            className="text-4xl md:text-5xl text-emerald-200 font-light tracking-tight mb-8"
-            variants={fadeInUp}
-            initial="initial"
-            whileInView="whileInView"
-            viewport={{ once: true }}
-          >
-            Experience Luxury, Comfort, and Warmth
-          </motion.h2>
-          <motion.button
-            variants={fadeInUp}
-            initial="initial"
-            whileInView="whileInView"
-            viewport={{ once: true }}
-            className="bg-emerald-200 text-teal-950 px-8 py-4 rounded-lg font-medium tracking-wide shadow-lg hover:bg-emerald-300 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-          >
-            EXPLORE ALL LOCATIONS
-          </motion.button>
+          </motion.div>
         </div>
       </section>
 
