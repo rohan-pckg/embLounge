@@ -80,7 +80,7 @@ const amenities = [
   },
 ];
 
-const Mbale = () => {
+const Busia = () => {
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
@@ -118,7 +118,7 @@ const Mbale = () => {
           whileInView="whileInView"
         >
           <h1 className="text-7xl md:text-8xl text-emerald-200 font-light tracking-tight mb-8">
-           Welcome to Embassy Lounge Mbale!
+            Welcome to Embassy Lounge Busia!
           </h1>
           <p className="text-white text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light">
             Experience luxury and elegance in the heart of Iganga
@@ -305,4 +305,4 @@ const Mbale = () => {
   );
 };
 
-export default Mbale;
+export default Busia;

@@ -20,50 +20,50 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed w-full z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-teal-950/95 backdrop-blur-sm shadow-lg"
+          ? "bg-teal-950/80 backdrop-blur-md border-b border-emerald-200/10"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-4">
-        <div className="flex justify-between h-20">
+        <div className="flex justify-between h-24">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <img
               src="/src/assets/logo.png"
               alt="Embassy Lounge"
-              className="h-12 w-12 transform hover:scale-110 transition-transform duration-300"
+              className="h-16 w-16 transform hover:scale-110 transition-transform duration-300"
             />
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-12">
             {["Home", "About", "News"].map((item) => (
               <a
                 key={item}
                 href={`/${item.toLowerCase()}`}
-                className="text-emerald-200 hover:text-white transition-colors relative group"
+                className="text-emerald-200/90 hover:text-emerald-200 transition-colors duration-300 text-lg tracking-wide relative group"
               >
                 {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-200 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-2 left-0 w-0 h-[1px] bg-emerald-200/50 transition-all duration-500 group-hover:w-full"></span>
               </a>
             ))}
 
             <div className="relative group">
               <button
-                className="text-emerald-200 hover:text-white transition-colors flex items-center gap-1 group"
+                className="text-emerald-200/90 hover:text-emerald-200 transition-colors duration-300 flex items-center gap-2 text-lg tracking-wide group"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
                 Branches
-                <ChevronDown className="w-4 h-4 transform transition-transform duration-300 group-hover:rotate-180" />
+                <ChevronDown className="w-5 h-5 transform transition-transform duration-500 group-hover:rotate-180" />
               </button>
-              <div className="absolute invisible opacity-0 group-hover:visible group-hover:opacity-100 w-48 bg-teal-900/95 backdrop-blur-sm rounded-lg shadow-xl py-2 mt-2 transition-all duration-300 transform origin-top scale-95 group-hover:scale-100">
+              <div className="absolute invisible opacity-0 group-hover:visible group-hover:opacity-100 w-56 bg-teal-950/95 backdrop-blur-md rounded-xl shadow-xl py-2 mt-4 transition-all duration-300 transform origin-top scale-95 group-hover:scale-100 border border-emerald-200/10">
                 {branches.map((branch) => (
                   <a
                     key={branch}
                     href={`/branch/${branch.toLowerCase()}`}
-                    className="block px-4 py-2 text-sm text-emerald-200 hover:bg-teal-800/50 transition-colors first:rounded-t-lg last:rounded-b-lg"
+                    className="block px-6 py-3 text-lg text-emerald-200/90 hover:text-emerald-200 hover:bg-emerald-200/5 transition-all duration-300"
                   >
                     {branch}
                   </a>
@@ -71,8 +71,8 @@ const Navbar = () => {
               </div>
             </div>
 
-            <button className="bg-emerald-200 text-teal-950 px-6 py-3 rounded-lg hover:bg-emerald-300 transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
-              Contact
+            <button className="px-8 py-3 bg-emerald-200/90 hover:bg-emerald-200 text-teal-950 rounded-full text-lg tracking-wide transition-all duration-300 transform hover:scale-105">
+              Contact Us
             </button>
           </div>
 
@@ -80,12 +80,12 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-emerald-200 hover:text-white transition-colors"
+              className="text-emerald-200/90 hover:text-emerald-200 transition-colors duration-300"
             >
               {isOpen ? (
-                <X className="h-6 w-6" />
+                <X className="h-8 w-8" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-8 w-8" />
               )}
             </button>
           </div>
@@ -94,39 +94,39 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed left-0 right-0 top-20 bg-teal-900/95 backdrop-blur-sm shadow-lg transition-all duration-300 ${
+        className={`md:hidden fixed inset-0 top-24 bg-teal-950/95 backdrop-blur-md transition-all duration-500 ${
           isOpen
             ? "opacity-100 translate-y-0 pointer-events-auto"
-            : "opacity-0 -translate-y-4 pointer-events-none"
+            : "opacity-0 -translate-y-8 pointer-events-none"
         }`}
       >
-        <div className="px-4 py-4 space-y-3">
+        <div className="px-6 py-8 space-y-6 h-[calc(100vh-6rem)] overflow-y-auto">
           {["Home", "About", "News"].map((item) => (
             <a
               key={item}
               href={`/${item.toLowerCase()}`}
-              className="block px-4 py-2 text-emerald-200 hover:bg-teal-800/50 rounded-lg transition-colors"
+              className="block text-2xl text-emerald-200/90 hover:text-emerald-200 transition-colors duration-300"
             >
               {item}
             </a>
           ))}
 
-          <div className="relative">
+          <div className="space-y-6">
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="flex justify-between items-center w-full px-4 py-2 text-emerald-200 hover:bg-teal-800/50 rounded-lg transition-colors"
+              className="flex justify-between items-center w-full text-2xl text-emerald-200/90 hover:text-emerald-200 transition-colors duration-300"
             >
               Branches
               <ChevronDown
-                className={`w-4 h-4 transform transition-transform duration-300 ${
+                className={`w-6 h-6 transform transition-transform duration-500 ${
                   isDropdownOpen ? "rotate-180" : ""
                 }`}
               />
             </button>
             <div
-              className={`pl-4 space-y-2 transition-all duration-300 ${
+              className={`pl-8 space-y-6 transition-all duration-500 ${
                 isDropdownOpen
-                  ? "max-h-64 opacity-100 visible"
+                  ? "max-h-96 opacity-100 visible"
                   : "max-h-0 opacity-0 invisible"
               } overflow-hidden`}
             >
@@ -134,7 +134,7 @@ const Navbar = () => {
                 <a
                   key={branch}
                   href={`/branch/${branch.toLowerCase()}`}
-                  className="block px-4 py-2 text-emerald-200 hover:bg-teal-800/50 rounded-lg transition-colors"
+                  className="block text-xl text-emerald-200/90 hover:text-emerald-200 transition-colors duration-300"
                 >
                   {branch}
                 </a>
@@ -142,8 +142,8 @@ const Navbar = () => {
             </div>
           </div>
 
-          <button className="w-full px-4 py-2 bg-emerald-200 text-teal-950 rounded-lg hover:bg-emerald-300 transition-colors">
-            Contact
+          <button className="w-full px-8 py-4 bg-emerald-200/90 hover:bg-emerald-200 text-teal-950 rounded-full text-xl transition-all duration-300">
+            Contact Us
           </button>
         </div>
       </div>

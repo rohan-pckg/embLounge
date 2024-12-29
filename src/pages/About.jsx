@@ -3,6 +3,7 @@ import { Star, MapPin, Globe, Clock, Users, Heart } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
 
+
 const timeline = [
   {
     year: "2016",
