@@ -299,7 +299,7 @@ const Iganga = () => {
               className="w-full h-[600px] rounded-xl overflow-hidden bg-emerald-200/10 backdrop-blur-sm border border-emerald-200/20"
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3340.241279412105!2d33.4796944!3d0.615189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177ef34171b326f3%3A0x2e2864a92e3b17fd!2sCAMP%20DAVID!5e1!3m2!1sen!2sin!4v1735663909668!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3340.241279412105!2d33.4796944!3d0.615189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177ef34171b326f3%3A0x2e2864a92e3b17fd!2sCAMP%20DAVID!5e1!3m2!1sen!2sin!4v1735663909668!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
