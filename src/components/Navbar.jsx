@@ -71,9 +71,12 @@ const Navbar = () => {
               </div>
             </div>
 
-            <button className="px-8 py-3 bg-emerald-200/90 hover:bg-emerald-200 text-teal-950 rounded-full text-lg tracking-wide transition-all duration-300 transform hover:scale-105">
+            <a
+              href="/contact"
+              className="px-8 py-3 bg-emerald-200/90 hover:bg-emerald-200 text-teal-950 rounded-full text-lg tracking-wide transition-all duration-300 transform hover:scale-105"
+            >
               Contact Us
-            </button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -142,9 +145,12 @@ const Navbar = () => {
             </div>
           </div>
 
-          <button className="w-full px-8 py-4 bg-emerald-200/90 hover:bg-emerald-200 text-teal-950 rounded-full text-xl transition-all duration-300">
+          <a
+            href="/contact"
+            className="block w-full px-8 py-4 bg-emerald-200/90 hover:bg-emerald-200 text-teal-950 rounded-full text-xl text-center transition-all duration-300"
+          >
             Contact Us
-          </button>
+          </a>
         </div>
       </div>
     </nav>

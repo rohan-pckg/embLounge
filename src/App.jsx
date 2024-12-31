@@ -6,7 +6,7 @@ import ContactPage from "./pages/contact.jsx";
 import Iganga from "./pages/iganga.jsx";
 import Jinja from "./pages/Jinja.jsx";
 import Busia from "./pages/Busia.jsx";
- import NewsPage from "./pages/News.jsx";
+import NewsPage from "./pages/News.jsx";
 
 import "./globalStyles.module.scss";
 import "./index.css";

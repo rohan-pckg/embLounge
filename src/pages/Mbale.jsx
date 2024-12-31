@@ -11,53 +11,78 @@ import {
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
 
+ const animations = {
+    fadeInUp: {
+      initial: { opacity: 0, y: 20 },
+      whileInView: { opacity: 1, y: 0 },
+      viewport: { once: true },
+      transition: { duration: 0.6 }
+    },
+    staggerContainer: {
+      initial: {},
+      whileInView: {
+        transition: {
+          staggerChildren: 0.1
+        }
+      }
+    }
+  };
+
 const themeNights = [
   {
     day: "Monday",
-    title: "Upscale Mix",
+    title: "UGANDAN NITE",
     description:
-      "Premium signature drinks and vibrant beats are back daily, weekends till 2am EAT",
-    images: ["/src/assets/theme1-1.png", "/src/assets/theme1-2.png"],
+      "Dj Choice 256",
+    images: ["/src/assets/m1.jpeg", "/src/assets/m2.jpeg"],
     icon: GlassesIcon,
   },
   {
     day: "Tuesday",
     title: "Throwback Tuesday",
     description:
-      "Revive to the classics you love with DJ JoJo delivering sparkling the hits",
-    images: ["/src/assets/theme2-1.png", "/src/assets/theme2-2.png"],
+      " Dj Don Jakaranda",
+    images: ["/src/assets/m3.jpeg", "/src/assets/m4.jpeg"],
     icon: Music,
   },
   {
     day: "Wednesday",
-    title: "Ladies Mix Wednesday",
+    title: "LADIES NITE WEDNESDAY",
     description:
-      "A night out for the ladies—girls' glam, and great music by DJ Urban Mason!",
-    images: ["/src/assets/theme3-1.png", "/src/assets/theme3-2.png"],
+      "Dj Virtuo Akscent",
+    images: ["/src/assets/m5.jpeg", "/src/assets/m6.jpeg"],
     icon: Star,
   },
   {
     day: "Thursday",
     title: "Live Band Thursday",
     description:
-      "Feel the rhythm of live music with Thursday Band delivering an electrifying performance",
-    images: ["/src/assets/theme4-1.png", "/src/assets/theme4-2.png"],
+      "Chamuka Band",
+    images: ["/src/assets/m7.jpeg", "/src/assets/m8.jpeg"],
     icon: Music,
   },
   {
     day: "Friday",
-    title: "Live Band Thursday",
+    title: "FREAKY FRIDAY",
     description:
-      "Feel the rhythm of live music with Thursday Band delivering an electrifying performance",
-    images: ["/src/assets/theme4-1.png", "/src/assets/theme4-2.png"],
+      "Dj Calebs",
+    images: ["/src/assets/m9.jpeg", "/src/assets/m9.jpeg"],
     icon: Music,
   },
   {
     day: "Saturday",
-    title: "Live Band Thursday",
+    title: "AFRICA COMEDY HUB",
     description:
-      "Feel the rhythm of live music with Thursday Band delivering an electrifying performance",
-    images: ["/src/assets/theme4-1.png", "/src/assets/theme4-2.png"],
+      "Sir. Africa",
+    images: ["/src/assets/m4.jpeg", "/src/assets/theme4-2.png"],
+    icon: Music,
+  },
+  {
+    day: "Sunday",
+    title: "EASTERN CELEBRITY NIGHTS",
+    description:
+      "Deejay Wicky Wicky",
+    images: ["/src/assets/m4.jpeg", "/src/assets/theme4-2.png"],
     icon: Music,
   },
 ];
@@ -121,15 +146,17 @@ const Mbale = () => {
            Welcome to Embassy Lounge Mbale!
           </h1>
           <p className="text-white text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light">
-            Experience luxury and elegance in the heart of Iganga
+            Embassy Lounge Mbale is the flagship outlet of Embassy Lounge Uganda, located in the heart of Mbale City. This vibrant lounge offers an unforgettable experience, featuring a wide range of drinks, delicious meals, and exciting entertainment options.
           </p>
-          <motion.button
+         <a href="/contact">
+            <motion.button
             className="mt-8 px-8 py-3 bg-emerald-200 text-teal-950 rounded-full text-lg font-medium hover:bg-emerald-300 transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             Reserve Now
           </motion.button>
+         </a>
         </motion.div>
       </section>
 
@@ -153,23 +180,23 @@ const Mbale = () => {
             >
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <img
-                  src="/src/assets/pfp.png"
+                  src="/src/assets/m0.png"
                   alt="Branch Manager"
                   className="w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-teal-950 via-transparent to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-8">
                   <h3 className="text-3xl font-medium text-emerald-200 mb-4">
-                    Alex
+                    Watera Jackie
                   </h3>
                   <div className="space-y-3">
                     <div className="flex items-center gap-3 text-white/90">
                       <Phone className="w-5 h-5" />
-                      <span>+256 702 527277</span>
+                      <span>+256 701 390663</span>
                     </div>
                     <div className="flex items-center gap-3 text-white/90">
                       <Mail className="w-5 h-5" />
-                      <span>cdr@embassylounge.com</span>
+                      <span>embassymbale@embassyloungeuganda.com</span>
                     </div>
                   </div>
                 </div>
@@ -264,14 +291,22 @@ const Mbale = () => {
             whileInView="whileInView"
             className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
           >
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-              <img
-                src="/src/assets/location.png"
-                alt="Location"
-                className="w-full h-[500px] object-cover"
+            {/* Map */}
+            <motion.div
+              variants={animations.fadeInUp}
+              className="w-full h-[600px] rounded-xl overflow-hidden bg-emerald-200/10 backdrop-blur-sm border border-emerald-200/20"
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3339.8202096059117!2d34.17388050960174!3d1.0982268623303086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1778b79eaebe761f%3A0x70a801df79e24b7d!2sEmbassy%20Lounge!5e1!3m2!1sen!2sin!4v1735663753933!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Embassy Lounge Location"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-teal-950 via-transparent to-transparent"></div>
-            </div>
+            </motion.div>
             <div className="space-y-8">
               <div className="bg-emerald-200/10 backdrop-blur-sm p-8 rounded-xl border border-emerald-200/20">
                 <h3 className="text-3xl font-light text-emerald-200 mb-6">
@@ -280,7 +315,7 @@ const Mbale = () => {
                 <div className="space-y-4 text-white/70">
                   <div className="flex items-center gap-3">
                     <MapPin className="w-5 h-5 text-emerald-200" />
-                    <span>Plot 29-31, Republic Street, Mbale, Uganda</span>
+                    <span>Kumi Road, Nkoma Opp. IUIU, Mbale City, Uganda</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Clock className="w-5 h-5 text-emerald-200" />
@@ -288,13 +323,13 @@ const Mbale = () => {
                   </div>
                 </div>
               </div>
-              <motion.button
+             {/* <motion.button
                 className="w-full py-4 bg-emerald-200 text-teal-950 rounded-xl text-lg font-medium hover:bg-emerald-300 transition-colors"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 Get Directions
-              </motion.button>
+              </motion.button>*/}
             </div>
           </motion.div>
         </div>

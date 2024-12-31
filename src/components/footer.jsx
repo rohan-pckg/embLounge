@@ -82,7 +82,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="/branches/mbuya"
+                  href="/branch/mbale"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Embassy Lounge Mbale
@@ -90,7 +90,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="/branches/entebbe"
+                  href="/branch/iganga"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Camp David Royals Lounge Iganga
@@ -98,7 +98,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="/branches/bugolobi"
+                  href="/branch/busia"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Embassy Lounge Busia
@@ -106,7 +106,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="/branches/bugolobi"
+                  href="/branch/jinja"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Embassy Lounge Jinja
@@ -119,9 +119,9 @@ const Footer = () => {
           <div>
             <h3 className="text-emerald-200 font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2">
-              <li className="text-gray-300">Phone: +256 123 456 789</li>
-              <li className="text-gray-300">Email: info@embassylounge.com</li>
-              <li className="text-gray-300">Location: Kampala, Uganda</li>
+              <li className="text-gray-300">Phone: +256 701 390663</li>
+              <li className="text-gray-300">Email: embassymbale@embassyloungeuganda.com</li>
+              <li className="text-gray-300">Location: Mbale, Uganda</li>
             </ul>
           </div>
         </div>

@@ -26,6 +26,33 @@ const testimonials = [
   },
 ];
 
+const branches = [
+  {
+    name: "Embassy Lounge Mbale",
+    description: "Embassy Lounge Mbale is the flagship outlet of Embassy Lounge Uganda, located in the heart of Mbale City.",
+    image: "/src/assets/1-home.png",
+    path: "/branch/mbale"
+  },
+  {
+    name: "Camp David Royals Lounge Iganga",
+    description: "Camp David Royals Lounge Iganga was the 2018 Eastern Region inventory of the year, adding extra value to hospitality.",
+    image: "/src/assets/2-home.png",
+    path: "/branch/iganga"
+  },
+  {
+    name: "Embassy Lounge Busia",
+    description: "Embassy Lounge Busia is a popular entertainment destination in Busia Town, offering a unique blend of hospitality.",
+    image: "/src/assets/3-home.png",
+    path: "/branch/busia"
+  },
+  {
+    name: "Embassy Lounge Jinja",
+    description: "Embassy Lounge Jinja is a vibrant entertainment spot located in the heart of Jinja, offering an unforgettable experience.",
+    image: "/src/assets/4-home.png",
+    path: "/branch/jinja"
+  }
+];
+
 const HomePage = () => {
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -69,13 +96,16 @@ const HomePage = () => {
           <p className="text-white text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light mb-12">
             Where Entertainment Meets Elegance
           </p>
-          <motion.button
-            className="px-8 py-3 bg-emerald-200 text-teal-950 rounded-full text-lg font-medium hover:bg-emerald-300 transition-colors"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Book a Space
-          </motion.button>
+
+          <a href="/contact">
+            <motion.button
+              className="px-8 py-3 bg-emerald-200 text-teal-950 rounded-full text-lg font-medium hover:bg-emerald-300 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Book a Space
+            </motion.button>
+          </a>
         </motion.div>
       </section>
 
@@ -158,39 +188,16 @@ const HomePage = () => {
             whileInView="whileInView"
             className="space-y-16"
           >
-            {[
-              {
-                name: "Embassy Lounge Mbale",
-                description:
-                  "Embassy Lounge Mbale is the flagship outlet of Embassy Lounge Uganda, located in the heart of Mbale City.",
-                image: "/src/assets/1-home.png",
-              },
-              {
-                name: "Camp David Royals Lounge Iganga",
-                description:
-                  "Camp David Royals Lounge Iganga was the 2018 Eastern Region inventory of the year, adding extra value to hospitality.",
-                image: "/src/assets/2-home.png",
-              },
-              {
-                name: "Embassy Lounge Busia",
-                description:
-                  "Embassy Lounge Busia is a popular entertainment destination in Busia Town, offering a unique blend of hospitality.",
-                image: "/src/assets/3-home.png",
-              },
-              {
-                name: "Embassy Lounge Jinja",
-                description:
-                  "Embassy Lounge Jinja is a vibrant entertainment spot located in the heart of Jinja, offering an unforgettable experience.",
-                image: "/src/assets/4-home.png",
-              },
-            ].map((branch, index) => (
+            {branches.map((branch, index) => (
               <motion.div
                 key={index}
                 variants={fadeInUp}
                 className="group relative overflow-hidden rounded-2xl bg-emerald-200/10 backdrop-blur-sm border border-emerald-200/20"
               >
                 <div
-                  className={`grid grid-cols-1 md:grid-cols-2 ${index % 2 === 1 ? "md:flex-row-reverse" : ""}`}
+                  className={`grid grid-cols-1 md:grid-cols-2 ${
+                    index % 2 === 1 ? "md:flex-row-reverse" : ""
+                  }`}
                 >
                   <div className="relative h-[400px] overflow-hidden">
                     <img
@@ -207,14 +214,16 @@ const HomePage = () => {
                     <p className="text-white/70 leading-relaxed mb-8">
                       {branch.description}
                     </p>
-                    <motion.button
-                      className="flex items-center gap-3 bg-emerald-200 text-teal-950 px-6 py-3 rounded-full text-sm font-medium hover:bg-emerald-300 transition-colors w-fit"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      EXPLORE MORE
-                      <ArrowRight className="w-4 h-4" />
-                    </motion.button>
+                    <a href={branch.path}>
+                      <motion.button
+                        className="flex items-center gap-3 bg-emerald-200 text-teal-950 px-6 py-3 rounded-full text-sm font-medium hover:bg-emerald-300 transition-colors w-fit"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        EXPLORE MORE
+                        <ArrowRight className="w-4 h-4" />
+                      </motion.button>
+                    </a>
                   </div>
                 </div>
               </motion.div>
@@ -254,9 +263,7 @@ const HomePage = () => {
                 <p className="text-white/70 mb-6 leading-relaxed">
                   {testimonial.text}
                 </p>
-                <p className="text-emerald-200 font-medium">
-                  {testimonial.author}
-                </p>
+                <p className="text-emerald-200 font-medium">{testimonial.author}</p>
               </motion.div>
             ))}
           </motion.div>
