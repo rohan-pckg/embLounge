@@ -36,7 +36,7 @@ const themeNights = [
     title: "Ugandan mondays",
     description:
       "DJ Cypher",
-    images: ["/src/assets/b1.jpeg", "/src/assets/theme1-2.png"],
+    images: ["/b1.jpeg", "/theme1-2.png"],
     icon: GlassesIcon,
   },
   {
@@ -44,7 +44,7 @@ const themeNights = [
     title: "Premier Tuesdays",
     description:
       "OJ Selecta",
-    images: ["/src/assets/b2.jpeg", "/src/assets/theme2-2.png"],
+    images: ["/b2.jpeg", "/theme2-2.png"],
     icon: Music,
   },
   {
@@ -52,7 +52,7 @@ const themeNights = [
     title: "Ladies Night",
     description:
       "DJ Red UG",
-    images: ["/src/assets/b4.jpeg", "/src/assets/theme3-2.png"],
+    images: ["/b4.jpeg", "/theme3-2.png"],
     icon: Star,
   },
   {
@@ -60,7 +60,7 @@ const themeNights = [
     title: "Oldies/TBT",
     description:
       "DJ Cypher",
-    images: ["/src/assets/b5.jpeg", "/src/assets/theme4-2.png"],
+    images: ["/b5.jpeg", "/theme4-2.png"],
     icon: Music,
   },
   {
@@ -68,7 +68,7 @@ const themeNights = [
     title: "Celebrity Night",
     description:
       "Dj Wicky Wicky",
-    images: ["/src/assets/b6.jpeg", "/src/assets/theme4-2.png"],
+    images: ["/b6.jpeg", "/theme4-2.png"],
     icon: Music,
   },
   {
@@ -76,7 +76,7 @@ const themeNights = [
     title: "Africa Comedy Hub",
     description:
       "Sir Africa",
-    images: ["/src/assets/b7.jpeg", "/src/assets/theme4-2.png"],
+    images: ["/b7.jpeg", "/theme4-2.png"],
     icon: Music,
   },
   {
@@ -84,7 +84,7 @@ const themeNights = [
     title: "Chill Sundays Promax",
     description:
       "Dj Emaranx",
-    images: ["/src/assets/b8.jpeg", "/src/assets/theme4-2.png"],
+    images: ["/b8.jpeg", "/theme4-2.png"],
     icon: Music,
   },
 ];
@@ -133,7 +133,7 @@ const Busia = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-teal-950/80 to-teal-950"></div>
           <img
-            src="/src/assets/branch-hero.png"
+            src="/branch-hero.png"
             alt="Background"
             className="w-full h-full object-cover scale-105"
           />
@@ -183,7 +183,7 @@ const Busia = () => {
             >
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <img
-                  src="/src/assets/b0.jpeg"
+                  src="/b0.jpeg"
                   alt="Branch Manager"
                   className="w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />

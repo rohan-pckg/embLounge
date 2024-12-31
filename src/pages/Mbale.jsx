@@ -34,7 +34,7 @@ const themeNights = [
     title: "UGANDAN NITE",
     description:
       "Dj Choice 256",
-    images: ["/src/assets/m1.jpeg", "/src/assets/m2.jpeg"],
+    images: ["/m1.jpeg", "/m2.jpeg"],
     icon: GlassesIcon,
   },
   {
@@ -42,7 +42,7 @@ const themeNights = [
     title: "Throwback Tuesday",
     description:
       " Dj Don Jakaranda",
-    images: ["/src/assets/m3.jpeg", "/src/assets/m4.jpeg"],
+    images: ["/m3.jpeg", "/m4.jpeg"],
     icon: Music,
   },
   {
@@ -50,7 +50,7 @@ const themeNights = [
     title: "LADIES NITE WEDNESDAY",
     description:
       "Dj Virtuo Akscent",
-    images: ["/src/assets/m5.jpeg", "/src/assets/m6.jpeg"],
+    images: ["/m5.jpeg", "/m6.jpeg"],
     icon: Star,
   },
   {
@@ -58,7 +58,7 @@ const themeNights = [
     title: "Live Band Thursday",
     description:
       "Chamuka Band",
-    images: ["/src/assets/m7.jpeg", "/src/assets/m8.jpeg"],
+    images: ["/m7.jpeg", "/m8.jpeg"],
     icon: Music,
   },
   {
@@ -66,7 +66,7 @@ const themeNights = [
     title: "FREAKY FRIDAY",
     description:
       "Dj Calebs",
-    images: ["/src/assets/m9.jpeg", "/src/assets/m9.jpeg"],
+    images: ["/m9.jpeg", "/m9.jpeg"],
     icon: Music,
   },
   {
@@ -74,7 +74,7 @@ const themeNights = [
     title: "AFRICA COMEDY HUB",
     description:
       "Sir. Africa",
-    images: ["/src/assets/m4.jpeg", "/src/assets/theme4-2.png"],
+    images: ["/m4.jpeg", "/theme4-2.png"],
     icon: Music,
   },
   {
@@ -82,7 +82,7 @@ const themeNights = [
     title: "EASTERN CELEBRITY NIGHTS",
     description:
       "Deejay Wicky Wicky",
-    images: ["/src/assets/m4.jpeg", "/src/assets/theme4-2.png"],
+    images: ["/m4.jpeg", "/theme4-2.png"],
     icon: Music,
   },
 ];
@@ -131,7 +131,7 @@ const Mbale = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-teal-950/80 to-teal-950"></div>
           <img
-            src="/src/assets/branch-hero.png"
+            src="/branch-hero.png"
             alt="Background"
             className="w-full h-full object-cover scale-105"
           />
@@ -180,7 +180,7 @@ const Mbale = () => {
             >
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <img
-                  src="/src/assets/m0.png"
+                  src="/m0.png"
                   alt="Branch Manager"
                   className="w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />

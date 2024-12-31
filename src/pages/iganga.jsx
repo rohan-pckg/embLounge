@@ -36,7 +36,7 @@ const themeNights = [
     title: "Corporate Monday",
     description:
       "Premium signature drinks and vibrant beats are back daily, weekends till 2am EAT",
-    images: ["/src/assets/i1.jpeg", "/src/assets/theme1-2.png"],
+    images: ["/i1.jpeg", "/theme1-2.png"],
     icon: GlassesIcon,
   },
   {
@@ -44,7 +44,7 @@ const themeNights = [
     title: "Live Band",
     description:
       "Dj Alex Code x MC Bob Swama",
-    images: ["/src/assets/i2.jpeg", "/src/assets/theme2-2.png"],
+    images: ["/i2.jpeg", "/theme2-2.png"],
     icon: Music,
   },
   {
@@ -52,7 +52,7 @@ const themeNights = [
     title: "Bucket Night",
     description:
       "House DJs & MCs",
-    images: ["/src/assets/i8.jpeg", "/src/assets/theme3-2.png"],
+    images: ["/i8.jpeg", "/theme3-2.png"],
     icon: Star,
   },
   {
@@ -60,7 +60,7 @@ const themeNights = [
     title: "Celebrity Night",
     description:
       "Dj Wicky Wicky",
-    images: ["/src/assets/i6.jpeg", "/src/assets/theme4-2.png"],
+    images: ["/i6.jpeg", "/theme4-2.png"],
     icon: Music,
   },
   {
@@ -68,7 +68,7 @@ const themeNights = [
     title: "Dripp off FURAHDAY",
     description:
       "Shen MC",
-    images: ["/src/assets/i5.jpeg", "/src/assets/theme4-2.png"],
+    images: ["/i5.jpeg", "/theme4-2.png"],
     icon: Music,
   },
   {
@@ -76,7 +76,7 @@ const themeNights = [
     title: "Variety Night ",
     description:
       "DJ Gero",
-    images: ["/src/assets/i7.jpeg", "/src/assets/theme4-2.png"],
+    images: ["/i7.jpeg", "/theme4-2.png"],
     icon: Music,
   },
   {
@@ -84,7 +84,7 @@ const themeNights = [
     title: "Chill Sunday ",
     description:
       "DJ Alex Code",
-    images: ["/src/assets/i3.jpeg", "/src/assets/theme4-2.png"],
+    images: ["/i3.jpeg", "/theme4-2.png"],
     icon: Music,
   },
 ];
@@ -133,7 +133,7 @@ const Iganga = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-teal-950/80 to-teal-950"></div>
           <img
-            src="/src/assets/branch-hero.png"
+            src="/branch-hero.png"
             alt="Background"
             className="w-full h-full object-cover scale-105"
           />
@@ -182,7 +182,7 @@ const Iganga = () => {
             >
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <img
-                  src="/src/assets/i0.jpeg"
+                  src="/i0.jpeg"
                   alt="Branch Manager"
                   className="w-full object-fit transition-transform duration-500 group-hover:scale-110"
                 />

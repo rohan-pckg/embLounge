@@ -30,25 +30,25 @@ const branches = [
   {
     name: "Embassy Lounge Mbale",
     description: "Embassy Lounge Mbale is the flagship outlet of Embassy Lounge Uganda, located in the heart of Mbale City.",
-    image: "/src/assets/1-home.png",
+    image: "/1-home.png",
     path: "/branch/mbale"
   },
   {
     name: "Camp David Royals Lounge Iganga",
     description: "Camp David Royals Lounge Iganga was the 2018 Eastern Region inventory of the year, adding extra value to hospitality.",
-    image: "/src/assets/2-home.png",
+    image: "/2-home.png",
     path: "/branch/iganga"
   },
   {
     name: "Embassy Lounge Busia",
     description: "Embassy Lounge Busia is a popular entertainment destination in Busia Town, offering a unique blend of hospitality.",
-    image: "/src/assets/3-home.png",
+    image: "/3-home.png",
     path: "/branch/busia"
   },
   {
     name: "Embassy Lounge Jinja",
     description: "Embassy Lounge Jinja is a vibrant entertainment spot located in the heart of Jinja, offering an unforgettable experience.",
-    image: "/src/assets/4-home.png",
+    image: "/4-home.png",
     path: "/branch/jinja"
   }
 ];

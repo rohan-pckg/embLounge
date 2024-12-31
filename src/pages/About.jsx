@@ -10,28 +10,28 @@ const timeline = [
     title: "Embassy Lounge Mbale",
     description:
       "Embassy Lounge Uganda's journey began with the launch of its flagship outlet. Embassy Lounge Mbale in 2016. This pioneering establishment set the stage for the growth and vision that would come to define our brand.",
-    image: "/src/assets/1-home.png",
+    image: "/1-home.png",
   },
   {
     year: "2018",
     title: "Camp David Royale",
     description:
       "In 2018, we celebrated with the opening of Camp David lounge. Being made a huge impact in the region. This marked a significant step in further solidifying our presence and setting a new benchmark for hospitality in Uganda.",
-    image: "/src/assets/2-home.png",
+    image: "/2-home.png",
   },
   {
     year: "2020",
     title: "Embassy Lounge Busia",
     description:
       "The success of our previous ventures paved the way for Embassy Lounge Busia in 2020. This strategic expansion allowed us to bring our unique hospitality experience to the heart of Western Kenya, enriching the community with premium service and comfort.",
-    image: "/src/assets/3-home.png",
+    image: "/3-home.png",
   },
   {
     year: "2022",
     title: "Embassy Lounge Jinja",
     description:
       "In 2022, we proudly opened Embassy Lounge Jinja, located in East Africa's adventure capital. This addition clearly reflects a greater determination to push limits and innovate, offering a unique blend of comfort and excitement to our valued guests.",
-    image: "/src/assets/4-home.png",
+    image: "/4-home.png",
   },
 ];
 
@@ -100,7 +100,7 @@ const About = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-teal-950/80 to-teal-950"></div>
           <img
-            src="/src/assets/branch-hero.png"
+            src="/branch-hero.png"
             alt="Background"
             className="w-full h-full object-cover scale-105"
           />

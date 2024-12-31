@@ -33,7 +33,7 @@ const NewsPage = () => {
       date: "December 25, 2024",
       author: "Admin",
       readTime: "5 min read",
-      image: "/src/assets/news1.png",
+      image: "/news1.png",
       excerpt:
         "Join us for an unforgettable New Year's Eve celebration featuring live music, special performances, and a midnight countdown spectacle.",
       featured: true,
@@ -45,7 +45,7 @@ const NewsPage = () => {
       date: "December 20, 2024",
       author: "Marketing Team",
       readTime: "3 min read",
-      image: "/src/assets/news2.png",
+      image: "/news2.png",
       excerpt:
         "We're proud to announce that Embassy Lounge has been recognized as the Best Entertainment Venue in Eastern Uganda.",
       featured: true,
@@ -57,7 +57,7 @@ const NewsPage = () => {
       date: "December 15, 2024",
       author: "Chef James",
       readTime: "4 min read",
-      image: "/src/assets/news3.png",
+      image: "/news3.png",
       excerpt:
         "Discover our new weekend brunch menu featuring both local and international cuisines, crafted by our expert culinary team.",
     },
@@ -68,7 +68,7 @@ const NewsPage = () => {
       date: "December 10, 2024",
       author: "Events Team",
       readTime: "6 min read",
-      image: "/src/assets/news4.png",
+      image: "/news4.png",
       excerpt:
         "Embassy Lounge team members and local volunteers came together for our monthly community cleanup initiative.",
     },
@@ -79,7 +79,7 @@ const NewsPage = () => {
       date: "December 5, 2024",
       author: "Marketing Team",
       readTime: "3 min read",
-      image: "/src/assets/news5.png",
+      image: "/news5.png",
       excerpt:
         "Celebrate the holiday season with our special packages and promotional offers available throughout December.",
     },

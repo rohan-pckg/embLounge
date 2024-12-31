@@ -36,7 +36,7 @@ const themeNights = [
     title: "Monday Madness",
     description:
       " Dj Andy",
-    images: ["/src/assets/j1.jpeg", "/src/assets/theme1-2.png"],
+    images: ["/j1.jpeg", "/theme1-2.png"],
     icon: GlassesIcon,
   },
   {
@@ -44,7 +44,7 @@ const themeNights = [
     title: "Oldies/ TBT",
     description:
       "Dj Lucky Don",
-    images: ["/src/assets/j2.jpeg", "/src/assets/theme2-2.png"],
+    images: ["/j2.jpeg", "/theme2-2.png"],
     icon: Music,
   },
   {
@@ -52,7 +52,7 @@ const themeNights = [
     title: "Masavu Gookya Night",
     description:
       "Dj Nest",
-    images: ["/src/assets/j3.jpeg", "/src/assets/theme3-2.png"],
+    images: ["/j3.jpeg", "/theme3-2.png"],
     icon: Star,
   },
   {
@@ -60,7 +60,7 @@ const themeNights = [
     title: "Celebrity Night",
     description:
       "Dj Wicky Wicky",
-    images: ["/src/assets/j4.jpeg", "/src/assets/theme4-2.png"],
+    images: ["/j4.jpeg", "/theme4-2.png"],
     icon: Music,
   },
   {
@@ -68,7 +68,7 @@ const themeNights = [
     title: "Bikini Night",
     description:
       "Dj Burkholder",
-    images: ["/src/assets/j5.jpeg", "/src/assets/theme4-2.png"],
+    images: ["/j5.jpeg", "/theme4-2.png"],
     icon: Music,
   },
   {
@@ -76,7 +76,7 @@ const themeNights = [
     title: "Live Band Thursday",
     description:
       "Dj Wicky Wicky",
-    images: ["/src/assets/j6.jpeg", "/src/assets/theme4-2.png"],
+    images: ["/j6.jpeg", "/theme4-2.png"],
     icon: Music,
   },
   {
@@ -84,7 +84,7 @@ const themeNights = [
     title: "Live Band Night",
     description:
       " Dj Nest",
-    images: ["/src/assets/j7.jpeg", "/src/assets/theme4-2.png"],
+    images: ["/j7.jpeg", "/theme4-2.png"],
     icon: Music,
   },
 ];
@@ -133,7 +133,7 @@ const Jinja = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-teal-950/80 to-teal-950"></div>
           <img
-            src="/src/assets/branch-hero.png"
+            src="/branch-hero.png"
             alt="Background"
             className="w-full h-full object-cover scale-105"
           />
@@ -180,7 +180,7 @@ const Jinja = () => {
             >
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <img
-                  src="/src/assets/j0.jpeg"
+                  src="/j0.jpeg"
                   alt="Branch Manager"
                   className="w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
