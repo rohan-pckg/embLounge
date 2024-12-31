@@ -31,7 +31,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <img
-              src="/src/assets/logo.png"
+              src="/logo.png"
               alt="Embassy Lounge"
               className="h-16 w-16 transform hover:scale-110 transition-transform duration-300"
             />
