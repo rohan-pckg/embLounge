@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Logo Column */}
           <div className="flex flex-col items-start">
             <img
-              src="/src/assets/logo.png"
+              src="/logo.png"
               alt="Embassy Lounge Logo"
               className=" w-100 mb-4"
             />
