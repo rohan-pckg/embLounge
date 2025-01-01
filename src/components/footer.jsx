@@ -41,7 +41,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="/"
+                  href="/home"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Home
@@ -53,14 +53,6 @@ const Footer = () => {
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/branches"
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  Branches
                 </a>
               </li>
               <li>
