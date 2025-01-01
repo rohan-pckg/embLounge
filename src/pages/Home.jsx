@@ -93,7 +93,7 @@ const HomePage = () => {
           <h1 className="text-4xl md:text-6xl text-emerald-200 font-light tracking-tight mb-8">
             Welcome to Embassy Lounge
           </h1>
-          <p className="text-white text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-light mb-12">
+          <p className="text-white text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light mb-12">
             Where Entertainment Meets Elegance
           </p>
 
@@ -113,21 +113,51 @@ const HomePage = () => {
       <section className="py-32 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.h2
-            className="text-3xl md:text-5xl text-center text-emerald-200 font-light tracking-tight mb-20"
+            className="text-5xl md:text-6xl text-center text-emerald-200 font-light tracking-tight mb-20"
             variants={fadeInUp}
             initial="initial"
             whileInView="whileInView"
           >
             Explore Embassy Lounge
           </motion.h2>
-          {/* Rest of the features section remains unchanged */}
           <motion.div
             variants={staggerContainer}
             initial="initial"
             whileInView="whileInView"
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
           >
-            {/* ... Feature cards ... */}
+            {[
+              {
+                icon: <User className="w-8 h-8" />,
+                title: "Who We Are",
+                description:
+                  "Embassy Lounge Uganda is a leading hospitality brand renowned for its perfect blend of entertainment, comfort, and warm hospitality.",
+              },
+              {
+                icon: <MapPin className="w-8 h-8" />,
+                title: "Our Locations",
+                description:
+                  "Our vibrant bars and cozy guest houses in Mbale, Iganga, Busia, and Jinja offer an ideal retreat for both leisure travelers and business guests.",
+              },
+              {
+                icon: <Phone className="w-8 h-8" />,
+                title: "Why Choose Us",
+                description:
+                  "At Embassy Lounge Uganda, we pride ourselves on delivering exceptional service and unforgettable experiences that exceed expectations.",
+              },
+            ].map((feature, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                className="bg-emerald-200/10 backdrop-blur-sm p-8 rounded-xl border border-emerald-200/20"
+              >
+                <div className="text-emerald-200 mb-6">{feature.icon}</div>
+                <h3 className="text-2xl font-light text-emerald-200 mb-4">
+                  {feature.title}
+                </h3>
+                <p className="text-white/70">{feature.description}</p>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
@@ -136,7 +166,7 @@ const HomePage = () => {
       <section className="py-32 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.h2
-            className="text-3xl md:text-5xl text-center text-emerald-200 font-light tracking-tight mb-8"
+            className="text-5xl md:text-6xl text-center text-emerald-200 font-light tracking-tight mb-8"
             variants={fadeInUp}
             initial="initial"
             whileInView="whileInView"
@@ -144,14 +174,61 @@ const HomePage = () => {
             Discover Our Branches
           </motion.h2>
           <motion.p
-            className="text-center text-white/70 text-lg md:text-xl mb-20"
+            className="text-center text-white/70 text-xl mb-20"
             variants={fadeInUp}
             initial="initial"
             whileInView="whileInView"
           >
             Unwind, Dine, and Stay—Just a Click Away! ⭐✨
           </motion.p>
-          {/* Rest of the branches section remains unchanged */}
+
+          <motion.div
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            className="space-y-16"
+          >
+            {branches.map((branch, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                className="group relative overflow-hidden rounded-2xl bg-emerald-200/10 backdrop-blur-sm border border-emerald-200/20"
+              >
+                <div
+                  className={`grid grid-cols-1 md:grid-cols-2 ${
+                    index % 2 === 1 ? "md:flex-row-reverse" : ""
+                  }`}
+                >
+                  <div className="relative h-[400px] overflow-hidden">
+                    <img
+                      src={branch.image}
+                      alt={branch.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-teal-950/80 to-transparent"></div>
+                  </div>
+                  <div className="p-12 flex flex-col justify-center">
+                    <h3 className="text-3xl font-light text-emerald-200 mb-6">
+                      {branch.name}
+                    </h3>
+                    <p className="text-white/70 leading-relaxed mb-8">
+                      {branch.description}
+                    </p>
+                    <a href={branch.path}>
+                      <motion.button
+                        className="flex items-center gap-3 bg-emerald-200 text-teal-950 px-6 py-3 rounded-full text-sm font-medium hover:bg-emerald-300 transition-colors w-fit"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        EXPLORE MORE
+                        <ArrowRight className="w-4 h-4" />
+                      </motion.button>
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
@@ -159,14 +236,37 @@ const HomePage = () => {
       <section className="py-32 px-4 bg-gradient-to-b from-transparent to-teal-950/50">
         <div className="max-w-6xl mx-auto">
           <motion.h2
-            className="text-3xl md:text-5xl text-center text-emerald-200 font-light tracking-tight mb-20"
+            className="text-5xl md:text-6xl text-center text-emerald-200 font-light tracking-tight mb-20"
             variants={fadeInUp}
             initial="initial"
             whileInView="whileInView"
           >
             What Our Guests Say
           </motion.h2>
-          {/* Rest of the testimonials section remains unchanged */}
+          <motion.div
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          >
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                className="bg-emerald-200/10 backdrop-blur-sm p-8 rounded-xl border border-emerald-200/20"
+              >
+                <div className="flex mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-emerald-200" />
+                  ))}
+                </div>
+                <p className="text-white/70 mb-6 leading-relaxed">
+                  {testimonial.text}
+                </p>
+                <p className="text-emerald-200 font-medium">{testimonial.author}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
