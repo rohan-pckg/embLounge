@@ -109,7 +109,7 @@ const NewsPage = () => {
           initial="initial"
           whileInView="whileInView"
         >
-          <h1 className="text-7xl md:text-8xl text-emerald-200 font-light tracking-tight mb-8">
+          <h1 className="text-4xl md:text-6xl text-emerald-200 font-light tracking-tight mb-8">
             Latest News
           </h1>
           <p className="text-white text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light">
