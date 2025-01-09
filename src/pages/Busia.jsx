@@ -323,7 +323,7 @@ const Busia = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <Clock className="w-5 h-5 text-emerald-200" />
-                    <span>Open daily from 4 PM - Late</span>
+                    <span>Monday - Sunday (24 hours, 7days a week)</span>
                   </div>
                 </div>
               </div>

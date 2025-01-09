@@ -111,9 +111,9 @@ const Footer = () => {
           <div>
             <h3 className="text-emerald-200 font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2">
-              <li className="text-gray-300">Phone: +256 701 390663</li>
-              <li className="text-gray-300">Email: embassymbale@embassyloungeuganda.com</li>
-              <li className="text-gray-300">Location: Mbale, Uganda</li>
+              <li className="text-gray-300">Phone: +256772945684 / +256702945684</li>
+              <li className="text-gray-300">Email: info@embassyloungeug.com</li>
+              <li className="text-gray-300">Location: Uganda, East-Africa</li>
             </ul>
           </div>
         </div>

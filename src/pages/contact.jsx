@@ -68,22 +68,22 @@ const ContactPage = () => {
     {
       icon: <Phone className="w-8 h-8" />,
       title: "Phone",
-      details: ["+256 776 123456", "+256 753 789012"]
+      details: ["+256772945684", "+256702945684"]
     },
     {
       icon: <Mail className="w-8 h-8" />,
       title: "Email",
-      details: ["info@embassylounge.com", "bookings@embassylounge.com"]
+      details: ["info@embassyloungeug.com"]
     },
     {
       icon: <MapPin className="w-8 h-8" />,
       title: "Location",
-      details: ["Plot 123, Republic Street", "Mbale City, Uganda"]
+      details: ["Uganda, East-Africa"]
     },
     {
       icon: <Clock className="w-8 h-8" />,
       title: "Opening Hours",
-      details: ["Monday - Sunday", "10:00 AM - Late Night"]
+      details: ["Monday - Sunday", "24 hours, 7days a week"]
     }
   ];
 
@@ -299,7 +299,7 @@ const ContactPage = () => {
 
                 <motion.button
                   type="submit"
-                  className="w-full px-8 py-4 bg-emerald-200 text-teal-950 rounded-full text-lg font-medium hover:bg-emerald-300 transition-colors flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-6 py-2 bg-emerald-200 text-teal-950 rounded-full text-lg font-medium hover:bg-emerald-300 transition-colors flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   disabled={formStatus.isSubmitting}
