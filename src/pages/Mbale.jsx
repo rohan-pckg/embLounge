@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import {
   Mail,
   Phone,
@@ -7,81 +8,77 @@ import {
   Music,
   GlassesIcon,
   Star,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
 
- const animations = {
-    fadeInUp: {
-      initial: { opacity: 0, y: 20 },
-      whileInView: { opacity: 1, y: 0 },
-      viewport: { once: true },
-      transition: { duration: 0.6 }
+// Previous animations and data objects remain the same
+const animations = {
+  fadeInUp: {
+    initial: { opacity: 0, y: 20 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.6 },
+  },
+  staggerContainer: {
+    initial: {},
+    whileInView: {
+      transition: {
+        staggerChildren: 0.1,
+      },
     },
-    staggerContainer: {
-      initial: {},
-      whileInView: {
-        transition: {
-          staggerChildren: 0.1
-        }
-      }
-    }
-  };
+  },
+};
 
 const themeNights = [
   {
     day: "Monday",
     title: "UGANDAN NITE",
-    description:
-      "Dj Choice 256",
+    description: "Dj Choice 256",
     images: ["/m1.jpeg", "/m2.jpeg"],
     icon: GlassesIcon,
   },
   {
     day: "Tuesday",
     title: "Throwback Tuesday",
-    description:
-      " Dj Don Jakaranda",
+    description: " Dj Don Jakaranda",
     images: ["/m3.jpeg", "/m4.jpeg"],
     icon: Music,
   },
   {
     day: "Wednesday",
     title: "LADIES NITE WEDNESDAY",
-    description:
-      "Dj Virtuo Akscent",
+    description: "Dj Virtuo Akscent",
     images: ["/m5.jpeg", "/m6.jpeg"],
     icon: Star,
   },
   {
     day: "Thursday",
     title: "Live Band Thursday",
-    description:
-      "Chamuka Band",
+    description: "Chamuka Band",
     images: ["/m7.jpeg", "/m8.jpeg"],
     icon: Music,
   },
   {
     day: "Friday",
     title: "FREAKY FRIDAY",
-    description:
-      "Dj Calebs",
+    description: "Dj Calebs",
     images: ["/m9.jpeg", "/m9.jpeg"],
     icon: Music,
   },
   {
     day: "Saturday",
     title: "AFRICA COMEDY HUB",
-    description:
-      "Sir. Africa",
+    description: "Sir. Africa",
     images: ["/m4.jpeg", "/theme4-2.png"],
     icon: Music,
   },
   {
     day: "Sunday",
     title: "EASTERN CELEBRITY NIGHTS",
-    description:
-      "Deejay Wicky Wicky",
+    description: "Deejay Wicky Wicky",
     images: ["/m4.jpeg", "/theme4-2.png"],
     icon: Music,
   },
@@ -104,68 +101,151 @@ const amenities = [
     icon: Music,
   },
 ];
+const eventPosters = [
+  "/mbale_poster.jpg", // Make sure to update with your actual image paths
+];
 
 const Mbale = () => {
-  const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
-    transition: { duration: 0.6 },
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % eventPosters.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % eventPosters.length);
   };
 
-  const staggerContainer = {
-    initial: {},
-    whileInView: {
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
+  const prevSlide = () => {
+    setCurrentSlide(
+      (prev) => (prev - 1 + eventPosters.length) % eventPosters.length,
+    );
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-teal-950 via-teal-900 to-teal-950">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
+      {/* Header Banner for Latest Event */}
+      {/*<div className="bg-emerald-200/10 backdrop-blur-sm border-b border-emerald-200/20">
+        <div className="max-w-6xl mx-auto px-4 py-2">
+          <p className="text-center text-emerald-200 font-medium">
+            Next Event: Kim Black MC - Hype Experience SN3 | Saturday, 08 FEB
+          </p>
+        </div>
+      </div>*/}
+
+      {/* Updated Hero Section with Consistent Margins */}
+      <section className="relative min-h-screen flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-teal-950/80 to-teal-950"></div>
-          <img
-            src="/branch-hero.png"
-            alt="Background"
-            className="w-full h-full object-cover scale-105"
-          />
         </div>
-        <motion.div
-          className="relative z-10 max-w-6xl mx-auto text-center"
-          variants={fadeInUp}
-          initial="initial"
-          whileInView="whileInView"
-        >
-          <h1 className="text-4xl md:text-6xl text-emerald-200 font-light tracking-tight mb-8">
-           Welcome to Embassy Lounge Mbale!
-          </h1>
-          <p className="text-white text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light">
-            Embassy Lounge Mbale is the flagship outlet of Embassy Lounge Uganda, located in the heart of Mbale City. This vibrant lounge offers an unforgettable experience, featuring a wide range of drinks, delicious meals, and exciting entertainment options.
-          </p>
-         <a href="/contact">
-            <motion.button
-            className="mt-8 px-8 py-3 bg-emerald-200 text-teal-950 rounded-full text-lg font-medium hover:bg-emerald-300 transition-colors"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Reserve Now
-          </motion.button>
-         </a>
-        </motion.div>
-      </section>
 
+        <div className="relative z-10 w-full">
+          <div className="max-w-6xl mx-auto px-4 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+              {/* Left Column - Content */}
+              <motion.div
+                className="text-left"
+                variants={animations.fadeInUp}
+                initial="initial"
+                whileInView="whileInView"
+              >
+                <h1 className="text-4xl md:text-6xl text-emerald-200 font-light tracking-tight mb-8">
+                  Welcome to Embassy Lounge Mbale!
+                </h1>
+                <p className="text-white text-xl md:text-2xl max-w-2xl leading-relaxed font-light mb-8">
+                  Experience the best entertainment in Mbale City. Join us for
+                  unforgettable nights featuring top artists, DJs, and exclusive
+                  events.
+                </p>
+                <a href="/contact">
+                  <motion.button
+                    className="px-8 py-3 bg-emerald-200 text-teal-950 rounded-full text-lg font-medium hover:bg-emerald-300 transition-colors"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Reserve Your Table
+                  </motion.button>
+                </a>
+              </motion.div>
+
+              {/* Right Column - Event Poster Showcase */}
+              <motion.div
+                className="relative w-full"
+                variants={animations.fadeInUp}
+                initial="initial"
+                whileInView="whileInView"
+              >
+                <div className="relative aspect-[4/5] w-full">
+                  {eventPosters.map((poster, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: 100 }}
+                      animate={{
+                        opacity: currentSlide === index ? 1 : 0,
+                        x: currentSlide === index ? 0 : 100,
+                        scale: currentSlide === index ? 1 : 0.95,
+                      }}
+                      transition={{ duration: 0.5 }}
+                      className="absolute inset-0"
+                    >
+                      <img
+                        src={poster}
+                        alt={`Event Poster ${index + 1}`}
+                        className="w-full h-full object-contain rounded-lg shadow-2xl"
+                      />
+                    </motion.div>
+                  ))}
+
+                  {/* Navigation Arrows */}
+                  <div className="absolute inset-y-0 -left-4 -right-4 flex items-center justify-between">
+                    <button
+                      onClick={prevSlide}
+                      className="p-2 rounded-full bg-black/50 hover:bg-black/70 text-white transition-colors transform hover:scale-105"
+                      aria-label="Previous poster"
+                    >
+                      <ChevronLeft className="w-6 h-6" />
+                    </button>
+                    <button
+                      onClick={nextSlide}
+                      className="p-2 rounded-full bg-black/50 hover:bg-black/70 text-white transition-colors transform hover:scale-105"
+                      aria-label="Next poster"
+                    >
+                      <ChevronRight className="w-6 h-6" />
+                    </button>
+                  </div>
+
+                  {/* Slide Indicators */}
+                  <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    {eventPosters.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentSlide(index)}
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                          currentSlide === index
+                            ? "bg-emerald-200 w-4"
+                            : "bg-emerald-200/50"
+                        }`}
+                        aria-label={`Go to poster ${index + 1}`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Manager Section */}
       <section className="py-32 px-4 bg-gradient-to-b from-teal-950/50 to-transparent">
         <div className="max-w-6xl mx-auto">
           <motion.h2
             className="text-5xl md:text-6xl text-center text-emerald-200 font-light tracking-tight mb-20"
-            variants={fadeInUp}
+            variants={animations.fadeInUp}
             initial="initial"
             whileInView="whileInView"
           >
@@ -173,7 +253,7 @@ const Mbale = () => {
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <motion.div
-              variants={fadeInUp}
+              variants={animations.fadeInUp}
               initial="initial"
               whileInView="whileInView"
               className="group"
@@ -203,7 +283,7 @@ const Mbale = () => {
               </div>
             </motion.div>
             <motion.div
-              variants={staggerContainer}
+              variants={animations.staggerContainer}
               initial="initial"
               whileInView="whileInView"
               className="space-y-6"
@@ -211,7 +291,7 @@ const Mbale = () => {
               {amenities.map((amenity, index) => (
                 <motion.div
                   key={index}
-                  variants={fadeInUp}
+                  variants={animations.fadeInUp}
                   className="bg-emerald-200/10 backdrop-blur-sm p-6 rounded-xl border border-emerald-200/20"
                 >
                   <div className="flex items-start gap-4">
@@ -235,14 +315,14 @@ const Mbale = () => {
         <div className="max-w-6xl mx-auto">
           <motion.h2
             className="text-5xl md:text-6xl text-center text-emerald-200 font-light tracking-tight mb-20"
-            variants={fadeInUp}
+            variants={animations.fadeInUp}
             initial="initial"
             whileInView="whileInView"
           >
             Signature Events
           </motion.h2>
           <motion.div
-            variants={staggerContainer}
+            variants={animations.staggerContainer}
             initial="initial"
             whileInView="whileInView"
             className="grid grid-cols-1 md:grid-cols-2 gap-8"
@@ -250,7 +330,7 @@ const Mbale = () => {
             {themeNights.map((night, index) => (
               <motion.div
                 key={index}
-                variants={fadeInUp}
+                variants={animations.fadeInUp}
                 className="group relative overflow-hidden rounded-2xl"
               >
                 <div className="relative h-[400px] overflow-hidden">
@@ -279,14 +359,14 @@ const Mbale = () => {
         <div className="max-w-6xl mx-auto">
           <motion.h2
             className="text-5xl md:text-6xl text-center text-emerald-200 font-light tracking-tight mb-20"
-            variants={fadeInUp}
+            variants={animations.fadeInUp}
             initial="initial"
             whileInView="whileInView"
           >
             Visit Us
           </motion.h2>
           <motion.div
-            variants={fadeInUp}
+            variants={animations.fadeInUp}
             initial="initial"
             whileInView="whileInView"
             className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
@@ -323,7 +403,7 @@ const Mbale = () => {
                   </div>
                 </div>
               </div>
-             {/* <motion.button
+              {/* <motion.button
                 className="w-full py-4 bg-emerald-200 text-teal-950 rounded-xl text-lg font-medium hover:bg-emerald-300 transition-colors"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
