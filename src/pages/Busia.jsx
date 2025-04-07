@@ -242,6 +242,77 @@ const Busia = () => {
         </div>
       </section>
 
+
+       <section className="py-32 px-4 bg-gradient-to-b from-teal-950/50 to-transparent">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2
+            className="text-5xl md:text-6xl text-center text-emerald-200 font-light tracking-tight mb-20"
+            variants={animations.fadeInUp}
+            initial="initial"
+            whileInView="whileInView"
+          >
+            Your Host
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <motion.div
+              variants={animations.fadeInUp}
+              initial="initial"
+              whileInView="whileInView"
+              className="group"
+            >
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                <img
+                  src="/b0.jpeg"
+                  alt="Branch Manager"
+                  className="w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-teal-950 via-transparent to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-8">
+                  <h3 className="text-3xl font-medium text-emerald-200 mb-4">
+                    Wabwire Yazidi Emaranx
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3 text-white/90">
+                      <Phone className="w-5 h-5" />
+                      <span>+256 785 841161</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-white/90">
+                      <Mail className="w-5 h-5" />
+                      <span>busia@embassyloungeug.com</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              variants={animations.staggerContainer}
+              initial="initial"
+              whileInView="whileInView"
+              className="space-y-6"
+            >
+              {amenities.map((amenity, index) => (
+                <motion.div
+                  key={index}
+                  variants={animations.fadeInUp}
+                  className="bg-emerald-200/10 backdrop-blur-sm p-6 rounded-xl border border-emerald-200/20"
+                >
+                  <div className="flex items-start gap-4">
+                    <amenity.icon className="w-6 h-6 text-emerald-200" />
+                    <div>
+                      <h4 className="text-lg font-medium text-emerald-200 mb-2">
+                        {amenity.title}
+                      </h4>
+                      <p className="text-white/70">{amenity.description}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+
       {/* Theme Nights Section */}
       <section className="py-32 px-4">
         <div className="max-w-6xl mx-auto">
